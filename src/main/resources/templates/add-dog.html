@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Add Dog</title>
+</head>
+<body>
+
+<h1>Add Dog</h1>
+
+<form th:action="@{/save}" th:object="${dog}" method="post">
+
+  <label>Breed:</label>
+  <input type="text" th:field="*{breed}" />
+
+  <br><br>
+
+  <label>Sub Breed:</label>
+  <input type="text" th:field="*{subBreed}" />
+
+  <br><br>
+
+  <button type="submit">
+    Save Dog
+  </button>
+
+</form>
+
+<br>
+
+<a href="/">Back to Home</a>
+
+</body>
+</html>

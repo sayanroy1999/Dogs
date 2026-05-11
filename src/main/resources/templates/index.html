@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Dogs List</title>
+</head>
+<body>
+
+<h1>Dogs List</h1>
+
+<a href="/add">Add New Dog</a>
+
+<br><br>
+
+<table border="1">
+
+  <tr>
+    <th>ID</th>
+    <th>Breed</th>
+    <th>Sub Breed</th>
+    <th>Actions</th>
+  </tr>
+
+  <tr th:each="dog : ${dogs}">
+    <td th:text="${dog.id}"></td>
+    <td th:text="${dog.breed}"></td>
+    <td th:text="${dog.subBreed}"></td>
+
+    <td>
+      <a th:href="@{/edit/{id}(id=${dog.id})}">
+        Edit
+      </a>
+
+      |
+
+      <a th:href="@{/delete/{id}(id=${dog.id})}">
+        Delete
+      </a>
+    </td>
+  </tr>
+
+</table>
+
+</body>
+</html>

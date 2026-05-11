@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Edit Dog</title>
+</head>
+<body>
+
+<h1>Edit Dog</h1>
+
+<form th:action="@{/update/{id}(id=${dog.id})}"
+      th:object="${dog}"
+      method="post">
+
+  <label>Breed:</label>
+  <input type="text" th:field="*{breed}" />
+
+  <br><br>
+
+  <label>Sub Breed:</label>
+  <input type="text" th:field="*{subBreed}" />
+
+  <br><br>
+
+  <button type="submit">
+    Update Dog
+  </button>
+
+</form>
+
+<br>
+
+<a href="/">Back to Home</a>
+
+</body>
+</html>
