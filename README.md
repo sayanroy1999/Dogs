@@ -1,49 +1,65 @@
-# Dogs Web API Project
+# Dogs API 🐶
 
-A Spring Boot CRUD application for managing dog breeds and sub-breeds.
+A Spring Boot REST API for managing dogs, backed by MySQL on Railway.
 
-## Technologies Used
-
-- Java
-- Spring Boot
-- Spring MVC
+## Tech Stack
+- Java 23
+- Spring Boot 4.0
 - Spring Data JPA
+- MySQL (Railway)
+- Lombok
 - Thymeleaf
-- MySQL
 
 ## Features
+- Create a dog
+- Get all dogs
+- Get dog by ID
+- Update a dog
+- Delete a dog
 
-- View all dogs
-- Add a dog
-- Edit dog details
-- Delete dogs
-- Persistent database storage
-- Initial data loaded from JSON file
+## API Endpoints
 
-## Database
+| Method | Endpoint    | Description   |
+|--------|-------------|---------------|
+| GET    | /dogs       | Get all dogs  |
+| GET    | /dogs/{id}  | Get dog by ID |
+| POST   | /dogs       | Add a new dog |
+| PUT    | /dogs/{id}  | Update a dog  |
+| DELETE | /dogs/{id}  | Delete a dog  |
 
-MySQL database name:
+## Running Locally
 
-```sql
-dogsdb
-```
+### Prerequisites
+- Java 23
+- Maven
 
-## Run the Project
+### Steps
+1. Clone the repo
+   git clone https://github.com/sayanroy1999/Dogs.git
 
-1. Clone the repository
-2. Configure MySQL in `application.properties`
-3. Run the application
+2. Configure application.properties
+   spring.datasource.url=jdbc:mysql://HOST:PORT/railway
+   spring.datasource.username=root
+   spring.datasource.password=YOUR_PASSWORD
 
-Application runs on:
+3. Run the app
+   ./mvnw spring-boot:run
 
-```text
-http://localhost:9090
-```
+4. Access at http://localhost:9090
 
-## JSON Data Source
+## Deployment (Railway)
 
-Initial dog data is loaded from:
+Both the Spring Boot app and MySQL database are hosted on Railway.
 
-```text
-src/main/resources/data/dogs.json
-```
+### Services on Railway
+- **MySQL** → Database service
+- **Dogs API** → Spring Boot application service
+
+### Environment Variables set on Railway
+- SPRING_DATASOURCE_URL
+- SPRING_DATASOURCE_USERNAME
+- SPRING_DATASOURCE_PASSWORD
+- SERVER_PORT
+
+### Live URL
+https://dogs-production.up.railway.app
