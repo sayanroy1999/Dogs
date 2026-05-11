@@ -62,4 +62,4 @@ Both the Spring Boot app and MySQL database are hosted on Railway.
 - SERVER_PORT
 
 ### Live URL
-https://dogs-production.up.railway.app
+https://dogs-production-8ada.up.railway.app
