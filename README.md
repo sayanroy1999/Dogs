@@ -1,14 +1,14 @@
 # Dogs API 🐶
 
-A Spring Boot REST API for managing dogs, backed by MySQL on Railway.
+A Spring Boot web application for managing dogs, backed by MySQL on Railway.
 
 ## Tech Stack
-- Java 23
+- Java 21
 - Spring Boot 4.0
 - Spring Data JPA
 - MySQL (Railway)
 - Lombok
-- Thymeleaf
+- Thymeleaf (UI)
 
 ## Features
 - Create a dog
@@ -17,49 +17,36 @@ A Spring Boot REST API for managing dogs, backed by MySQL on Railway.
 - Update a dog
 - Delete a dog
 
-## API Endpoints
+## Web Endpoints
 
-| Method | Endpoint    | Description   |
-|--------|-------------|---------------|
-| GET    | /dogs       | Get all dogs  |
-| GET    | /dogs/{id}  | Get dog by ID |
-| POST   | /dogs       | Add a new dog |
-| PUT    | /dogs/{id}  | Update a dog  |
-| DELETE | /dogs/{id}  | Delete a dog  |
+| Method | Endpoint         | Description        |
+|--------|------------------|--------------------|
+| GET    | /                | Home - list all dogs |
+| GET    | /add             | Show add dog form  |
+| POST   | /save            | Save a new dog     |
+| GET    | /edit/{id}       | Show edit form     |
+| POST   | /update/{id}     | Update a dog       |
+| GET    | /delete/{id}     | Delete a dog       |
 
 ## Running Locally
 
 ### Prerequisites
-- Java 23
+- Java 21
 - Maven
 
 ### Steps
 1. Clone the repo
    git clone https://github.com/sayanroy1999/Dogs.git
 
-2. Configure application.properties
-   spring.datasource.url=jdbc:mysql://HOST:PORT/railway
-   spring.datasource.username=root
-   spring.datasource.password=YOUR_PASSWORD
+2. Configure application.properties with your DB credentials
 
 3. Run the app
    ./mvnw spring-boot:run
 
-4. Access at http://localhost:9090
+4. Access at http://localhost:8080
 
-## Deployment (Railway)
-
-Both the Spring Boot app and MySQL database are hosted on Railway.
-
-### Services on Railway
-- **MySQL** → Database service
-- **Dogs API** → Spring Boot application service
-
-### Environment Variables set on Railway
-- SPRING_DATASOURCE_URL
-- SPRING_DATASOURCE_USERNAME
-- SPRING_DATASOURCE_PASSWORD
-- SERVER_PORT
+## Deployment
+Both Spring Boot app and MySQL are hosted on Railway.
 
 ### Live URL
 https://dogs-production-8ada.up.railway.app
