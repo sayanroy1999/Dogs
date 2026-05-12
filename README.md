@@ -45,6 +45,11 @@ A Spring Boot web application for managing dogs, backed by MySQL on Railway.
 
 4. Access at http://localhost:8080
 
+## Reflection
+Built this using Spring Boot and Thymeleaf for a clean
+full-stack solution. Railway made deployment straightforward
+with its built-in MySQL plugin.
+
 ## Deployment
 Both Spring Boot app and MySQL are hosted on Railway.
 
