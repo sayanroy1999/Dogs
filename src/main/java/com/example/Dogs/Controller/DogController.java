@@ -42,6 +42,9 @@ public class DogController {
     // DELETE DOG
     @GetMapping("/delete/{id}")
     public String deleteDog(@PathVariable Long id) {
+        if (!dogRepository.existsById(id)) {
+            throw new IllegalArgumentException("Invalid dog id: " + id);
+        }
         dogRepository.deleteById(id);
         return "redirect:/";
     }
@@ -63,6 +66,9 @@ public class DogController {
     public String updateDog(@PathVariable Long id,
                             @ModelAttribute Dog dog) {
 
+        dogRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid dog id: " + id));
+        
         dog.setId(id);
 
         dogRepository.save(dog);
